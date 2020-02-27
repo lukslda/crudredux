@@ -1,0 +1,7 @@
+npm i react-router-dom
+
+sudo npm install -g json-server
+
+# luego para iniciar el servidor ingresar:
+json-server db.json --port 4000
+
