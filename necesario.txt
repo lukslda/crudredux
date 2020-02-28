@@ -5,3 +5,5 @@ sudo npm install -g json-server
 # luego para iniciar el servidor ingresar:
 json-server db.json --port 4000
 
+npm i react-redux redux redux-thunk
+# NOTA: utilizar siempre la misma. apartir de la version 7 soporta hooks
