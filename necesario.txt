@@ -7,3 +7,7 @@ json-server db.json --port 4000
 
 npm i react-redux redux redux-thunk
 # NOTA: utilizar siempre la misma version de redux. Apartir de la version 7 redux soporta hooks.
+
+npm i axios
+
+npm i sweetalert2
