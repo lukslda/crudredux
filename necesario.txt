@@ -6,4 +6,4 @@ sudo npm install -g json-server
 json-server db.json --port 4000
 
 npm i react-redux redux redux-thunk
-# NOTA: utilizar siempre la misma. apartir de la version 7 soporta hooks
+# NOTA: utilizar siempre la misma version de redux. Apartir de la version 7 redux soporta hooks.
