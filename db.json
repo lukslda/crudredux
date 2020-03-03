@@ -1,46 +1,6 @@
 {
   "productos": [
     {
-      "id": 1,
-      "nombre": "Jugo de Zanahoria",
-      "precio": "31111"
-    },
-    {
-      "id": 2,
-      "nombre": "Jugo de Naranja",
-      "precio": "1"
-    },
-    {
-      "nombre": "Jugo de Naranja",
-      "precio": "300",
-      "id": 3
-    },
-    {
-      "nombre": "Rib Eye 800g",
-      "precio": "200",
-      "id": 4
-    },
-    {
-      "nombre": "Jugo de Fresa",
-      "precio": "200",
-      "id": 5
-    },
-    {
-      "nombre": "jugo de tomaco",
-      "precio": 150,
-      "id": 6
-    },
-    {
-      "nombre": "jugo de manzana",
-      "precio": 98,
-      "id": 7
-    },
-    {
-      "nombre": "jugo de mandarina",
-      "precio": 100,
-      "id": 8
-    },
-    {
       "nombre": "jugo de mandarina",
       "precio": 100,
       "id": 9
@@ -49,21 +9,6 @@
       "nombre": "jugo de mango",
       "precio": 130,
       "id": 10
-    },
-    {
-      "nombre": "Pelon",
-      "precio": 35,
-      "id": 11
-    },
-    {
-      "nombre": "pelon",
-      "precio": 50,
-      "id": 12
-    },
-    {
-      "nombre": "pelon",
-      "precio": 60,
-      "id": 13
     }
   ]
 }
