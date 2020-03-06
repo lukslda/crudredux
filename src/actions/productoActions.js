@@ -7,11 +7,17 @@ import {
     DESCARGA_PRODUCTOS_EXITO,
     PRODUCTO_ELIMINADO_ERROR,
     PRODUCTO_ELIMINADO_EXITO,
-    OBTENER_PRODUCTO_ELIMINAR
+    OBTENER_PRODUCTO_ELIMINAR,
+    OBTENER_PRODUCTO_EDITAR,
+    COMENZAR_EDICION_PRODUCTO,
+    PRODUCTO_EDITADO_EXITO,
+    PRODUCTO_EDITADO_ERROR
+
  } from '../types';
 
 import clienteAxios from '../config/axios';
 import Swal from 'sweetalert2';
+
 
  // en los Actions, son los encargados de insertar en la base de dato o mandar a ejecutar el reducer para modificar el state
 
@@ -22,7 +28,7 @@ export function crearNuevoProductoAction(producto) {
 
         try {
              // insertar en la API
-             await clienteAxios.post('/productosx', producto);
+             await clienteAxios.post('/productos', producto);
 
              // si todo sale bien, actualizar el state
              dispatch( agregarProductoExito(producto) );
@@ -34,7 +40,6 @@ export function crearNuevoProductoAction(producto) {
              )
 
         } catch (error) {
-            // console.log(error);
 
             // si hay un error cambiar el state
             dispatch( agregarProductoError(true) );
@@ -127,5 +132,45 @@ const eliminarProductoExito = () => ({
 
 const eliminarProductoError = () => ({
     type: PRODUCTO_ELIMINADO_ERROR,
+    payload: true
+});
+
+// Traer un producto a editar
+export function obtenerProductoEditar(producto) {
+    return (dispatch) => {
+        dispatch( obtenerProductoEditarAction(producto));
+    }
+}
+
+const obtenerProductoEditarAction = producto => ({
+    type: OBTENER_PRODUCTO_EDITAR,
+    payload: producto
+});
+
+//Edita un registro en la api y state
+export function editarProductoAction(producto) {
+    return async (dispatch) => {
+        dispatch( editarProducto());
+
+        try {
+            await clienteAxios.put(`/productos/${producto.id}`, producto);
+            dispatch( editarProductoExito(producto) );
+        } catch (error) {
+            dispatch( editarProductoError() );
+        }
+    }
+}
+
+const editarProducto = () => ({
+    type: COMENZAR_EDICION_PRODUCTO
+});
+
+const editarProductoExito = producto => ({
+    type: PRODUCTO_EDITADO_EXITO,
+    payload: producto
+});
+
+const editarProductoError = () => ({
+    type: PRODUCTO_EDITADO_ERROR,
     payload: true
 });

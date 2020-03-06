@@ -3,7 +3,7 @@ import Producto from './Producto';
 
 // redux
 import { useSelector, useDispatch } from 'react-redux';
-import { obtenerProductosAction } from '../actions/productionActions';
+import { obtenerProductosAction } from '../actions/productoActions';
 
 const Productos = () => {
 
@@ -14,7 +14,7 @@ const Productos = () => {
         // consultar la api
         const cargarProductos = () => dispatch( obtenerProductosAction() );
         cargarProductos();
-
+        // eslint-disable-next-line
     }, [])
 
     // obtener el state

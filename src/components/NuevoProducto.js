@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 // useSelector es una forma para acceder al state dentro del componente
 
 // actions de redux
-import { crearNuevoProductoAction } from '../actions/productionActions';
+import { crearNuevoProductoAction } from '../actions/productoActions';
+import {mostrarAlerta, ocultarAlertaAction } from '../actions/alertaActions';
 
 
 const NuevoProducto = ({history}) => {
@@ -17,8 +18,8 @@ const NuevoProducto = ({history}) => {
     const dispatch = useDispatch();
 
     // acceder al state del store
-    const cargando = useSelector( state => state.productos.loading);
     const error = useSelector( state => state.productos.error);
+    const alerta = useSelector( state => state.alerta.alerta);
 
     // mandar llamar el action de productoAction
     const agregarProducto = producto => dispatch( crearNuevoProductoAction(producto) );
@@ -29,10 +30,19 @@ const NuevoProducto = ({history}) => {
 
         //validar el formulario
         if(nombre.trim() === '' || precio === 0 ) {
+            
+            const alerta = {
+                msg: 'Ambos campos son obligatorios',
+                classes: 'alert alert-danger text-center text-uppercase p3'
+            }
+            
+            dispatch (mostrarAlerta(alerta));
+            
             return;
         }
 
         // si no se encuentran errores...
+        dispatch( ocultarAlertaAction() );
 
         // crear el nuevo producto
         agregarProducto({
@@ -53,6 +63,8 @@ const NuevoProducto = ({history}) => {
                         <h2 className="text-center mb-4 font-weight-bold">
                             Agregar nuevo producto
                         </h2>
+
+                        {alerta ? <p className={alerta.classes}>{alerta.msg}</p> : null }
 
                         <form
                             onSubmit={submitNuevoProducto}
