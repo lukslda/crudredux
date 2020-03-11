@@ -1,19 +1,14 @@
 {
   "productos": [
     {
-      "nombre": "jugo de mango",
-      "precio": "135",
-      "id": 10
+      "nombre": "jugo de limon",
+      "precio": "110",
+      "id": 1
     },
     {
-      "nombre": "catchow",
-      "precio": 250,
-      "id": 11
-    },
-    {
-      "nombre": "gati",
-      "precio": 200,
-      "id": 12
+      "nombre": "jugo de naranja",
+      "precio": 130,
+      "id": 2
     }
   ]
 }
