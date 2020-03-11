@@ -1,3 +1,7 @@
+https://abm-redux.netlify.com
+*funciona con una base de datos local
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
